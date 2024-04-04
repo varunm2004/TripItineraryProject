@@ -49,7 +49,7 @@ app.get('/weather', async (req, res) => {
       city: response.data.data[0].city_name,
       country: response.data.data[0].country_code,
       description: response.data.data[0].weather.description,
-      temperature: response.data.data[0].temp,
+      temperature: response.data.data[0].temp * 1.8 + 32 + '°F',
       icon: response.data.data[0].weather.icon
         };
 
@@ -63,8 +63,8 @@ app.get('/weather', async (req, res) => {
       attractions: attractions.map(attraction => ({
         name: attraction.name,
         address: attraction.address,
-        rating: attraction.rating,
-        type: attraction.photoUrl,
+        rating: attraction.rating + '/5',
+        photo: attraction.photoUrl,
       })),
     
     };
