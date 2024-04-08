@@ -49,7 +49,7 @@ app.get('/weather', async (req, res) => {
       city: response.data.data[0].city_name,
       country: response.data.data[0].country_code,
       description: response.data.data[0].weather.description,
-      temperature: response.data.data[0].temp * 1.8 + 32 + '°F',
+      temperature: response.data.data[0].temp * 1.8 + 32 + '°F' + ' | ' + response.data.data[0].temp + '°C',
       icon: response.data.data[0].weather.icon
         };
 
