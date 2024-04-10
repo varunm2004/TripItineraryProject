@@ -6,6 +6,7 @@ const cors = require('cors');
 
 const app = express();
 const PORT = process.env.PORT || 4000;
+const db = require('./config/connection');
 
 app.use(express.json());
 app.use(cors());
@@ -78,6 +79,10 @@ app.get('/weather', async (req, res) => {
   }
 });
 
-app.listen(PORT, () => {
-  console.log(`Server is running on http://localhost:${PORT}`);
-});
+
+db.once('open', () => {
+  app.listen(PORT, () => {
+    console.log(`Server is running on http://localhost:${PORT}`);
+  });
+})
+
