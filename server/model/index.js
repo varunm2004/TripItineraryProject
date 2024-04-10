@@ -1,3 +1,3 @@
 const Trip = require('./Trip');
 
-export { Trip };
+module.exports = { Trip };

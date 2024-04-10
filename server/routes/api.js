@@ -1,5 +1,7 @@
 const { Trip } = require('../model/index');
 
-export const test = async () => {
+const test = async () => {
     return await Trip.find({});
 }
+
+module.exports = { test };
