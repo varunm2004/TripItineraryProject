@@ -37,9 +37,9 @@ async function fetchPlaces(city, type) {
 }
 
 // Define your API endpoint to fetch weather data
-app.get('/weather', async (req, res) => {
+app.get('/weather/:city', async (req, res) => {
   try {
-    const { city } = req.query;
+    const { city } = req.params.city;
     
     // Make a GET request to Weatherbit API
     const response = await axios.get(`https://api.weatherbit.io/v2.0/current?city=${city}&key=56b3e7eef82942e2aab04de5bad338a3`);
