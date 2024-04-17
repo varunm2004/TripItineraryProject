@@ -6,10 +6,7 @@ const cors = require('cors');
 
 const app = express();
 const PORT = process.env.PORT || 4000;
-<<<<<<< HEAD:trip-itinerary-backend/server.js
-=======
 const db = require('./config/connection');
->>>>>>> master:server/server.js
 
 app.use(express.json());
 app.use(cors());
@@ -53,11 +50,7 @@ app.get('/weather', async (req, res) => {
       city: response.data.data[0].city_name,
       country: response.data.data[0].country_code,
       description: response.data.data[0].weather.description,
-<<<<<<< HEAD:trip-itinerary-backend/server.js
       temperature: response.data.data[0].temp * 1.8 + 32 + '°F',
-=======
-      temperature: response.data.data[0].temp * 1.8 + 32 + '°F' + ' | ' + response.data.data[0].temp + '°C',
->>>>>>> master:server/server.js
       icon: response.data.data[0].weather.icon
         };
 
