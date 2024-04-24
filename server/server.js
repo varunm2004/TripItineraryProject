@@ -43,7 +43,7 @@ app.get('/weather', async (req, res) => {
     const { city } = req.query;
     
     // Make a GET request to Weatherbit API
-    const response = await axios.get(`https://api.weatherbit.io/v2.0/current?city=${city}&key=56b3e7eef82942e2aab04de5bad338a3`);
+    const response = await axios.get(`https://api.weatherbit.io/v2.0/current?city=${city}&key=f8395bda84b0424ca264ec59e7decd65`);
 
     // Parse the response
     const weatherData = {
